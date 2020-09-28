@@ -21,6 +21,7 @@ COPY apache-maven-$MAVEN_VERSION-bin.tar.gz /
 COPY apache-tomcat-$TOMCAT_VERSION.tar.gz /
 
 # Install Maven, Tomcat 8.5.58
+COPY ./config/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 RUN INSTALL_PKGS="tar java-1.8.0-openjdk java-1.8.0-openjdk-devel" && \
     yum install -y --enablerepo=centosplus $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
