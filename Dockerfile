@@ -9,6 +9,7 @@ LABEL maintainer="Golf <490650706@qq.com>"
 
 ENV TOMCAT_VERSION=8.5.58 \
     MAVEN_VERSION=3.6.3 \
+	CATALINA_HOME=/tomcat \
 	STI_SCRIPTS_PATH=/usr/libexec/s2i/
 	
 LABEL io.k8s.description="Platform for building and running JEE applications on Tomcat" \
