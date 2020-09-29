@@ -33,7 +33,7 @@ c=`ls /opt/s2i/destination/src`
 echo $c
 
 cp -R /opt/s2i/destination/src/.  ./
-cp /opt/s2i/destination/src/config/catalina.sh /tomcat/bin/catalina.sh
+#cp /opt/s2i/destination/src/config/catalina.sh /tomcat/bin/catalina.sh
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
