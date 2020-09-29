@@ -37,7 +37,7 @@ cp -R /opt/s2i/destination/src/.  ./
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
-jar -cvf /opt/s2i/destination/src/ROOT.war ./*
+jar -cvf /opt/s2i/destination/src/ROOT.war ./WebContent/*
 a=`ls /tmp/`
 echo $a
 echo "**********"
