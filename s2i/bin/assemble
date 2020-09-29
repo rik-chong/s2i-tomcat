@@ -38,4 +38,9 @@ cp -R /opt/s2i/destination/src/.  ./
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
 jar -cvf ./ROOT.war ./*
+a=`ls /tmp/`
+echo $a
+echo "**********"
+c=`ls /opt/s2i/destination/src`
+echo $c
 cp -R /opt/s2i/destination/src/ROOT.war /tomcat/webapps/
