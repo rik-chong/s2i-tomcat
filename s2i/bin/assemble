@@ -23,6 +23,12 @@ fi
 
 echo "---> Installing application source..."
 #cp -Rf /tmp/src/. ./
+a=`ls /tmp/`
+echo $a
+echo "**********"
+b=`ls /opt/s2i/destination/`
+echo $b
+echo "------***"
 c=`ls /opt/s2i/destination/src`
 echo $c
 
