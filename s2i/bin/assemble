@@ -22,25 +22,10 @@ if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
 fi
 
 echo "---> Installing application source..."
-#cp -Rf /tmp/src/. ./
-a=`ls /tmp/`
-echo $a
-echo "**********"
-b=`ls /opt/s2i/destination/`
-echo $b
-echo "------***"
-c=`ls /opt/s2i/destination/src`
-echo $c
-
 cp -R /opt/s2i/destination/src/.  ./
 #cp /opt/s2i/destination/src/config/catalina.sh /tomcat/bin/catalina.sh
 
 echo "---> Building application from source..."
-# TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
-jar -cvf /opt/s2i/destination/src/ROOT.war -C ./WebContent .
-a=`ls /tmp/`
-echo $a
-echo "**********"
-c=`ls /opt/s2i/destination/src`
-echo $c
-cp -R /opt/s2i/destination/src/ROOT.war /tomcat/webapps/
+
+mvn package
+cp -R /opt/s2i/destination/src/im-private-server/target/im-private-server-1.0-SNAPSHOT.war /tomcat/webapps/
